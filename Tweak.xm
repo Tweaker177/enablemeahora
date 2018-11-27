@@ -47,9 +47,6 @@ return %orig;
 if(kEnabled) {
 thumbTintColor = [UIColor colorFromHexString:kThumbTintHex];
 arg1= thumbTintColor;
-/**
-[self setThumbTintColor:thumbTintColor];
-**/
 return %orig(arg1);
 }
 return %orig;
@@ -80,13 +77,12 @@ return %orig;
 }
 
 -(id)init {
+/* 
+everything here is duplicated in initWithFrame, not needed, but system wide has an initialization issue so tried adding changes to both places */
 %orig;
 if(kEnabled) {
 self.thumbTintColor=  [UIColor colorFromHexString:kThumbTintHex];
 self.onTintColor=  [UIColor colorFromHexString: kOnTintColorHex];
-/**
-self.tintColor =  [UIColor colorFromHexString: kOutlineTintHex];
-**/
 /**
 self.offImage.backgroundColor =  [UIColor colorFromHexString: kBackgroundColorHex];
 **/
@@ -105,9 +101,7 @@ return self;
 if(kEnabled) {
 self.thumbTintColor=  [UIColor colorFromHexString:kThumbTintHex];
 self.onTintColor=  [UIColor colorFromHexString: kOnTintColorHex];
-/**
-self.tintColor =  [UIColor colorFromHexString: kOutlineTintHex];
-**/
+
 if(kBackgroundColorEnabled) {
 self.layer.backgroundColor =  ([UIColor colorFromHexString: kBackgroundColorHex].CGColor);
 return self;
@@ -202,9 +196,6 @@ return outlineTintColor;
 return %orig;
 }
 
-%end
-
-%hook UISwitchModernVisualElement
 - (double)_wellBorderWidthPressed:(bool)arg1 on:(bool)arg2 {
 if((kEnabled)&&(kWantsCustomWidth)) {
 return kCustomBorderWidth;
@@ -213,7 +204,7 @@ return kCustomBorderWidth;
     return %orig;
 }
 %end
-/***
+/*** Left this method to remind possibility to hook and add custom thumb images
 %hook UISwitchModernVisualElement
 - (id)_effectiveThumbImage {
     return %orig;
@@ -238,15 +229,6 @@ return onImageColor;
 return %orig;
 }
 %end
-    /***********
-
-%hook UISwitchModernVisualElement
-- (CGRect)_switchWellContainerBoundsOn:(bool)arg1 pressed:(bool)arg2 {
-    return %orig;
-}
-%end
-
-************/
 
 %hook UISwitchModernVisualElement
 - (CGColor*)_wellColorOn:(bool)arg1 {
@@ -259,7 +241,7 @@ return %orig;
 }
 %end
 
-//Pointless without setting specific color
+//Pointless need to look into more
 
 %hook UISwitchModernVisualElement
 - (bool)_shouldUseLightTintOverColor:(id)arg1 {
@@ -307,7 +289,6 @@ return %orig;
 
 %end
 
-//was just if enabled 
 %hook UISwitchModernVisualElement
 - (void)_setPressed:(bool)arg1 on:(bool)arg2 animated:(bool)arg3 shouldAnimateLabels:(bool)arg4 completion:(id)arg5 {
 if((kEnabled)&&(kShowLabels)) {
