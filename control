@@ -1,0 +1,9 @@
+Package: com.i0stweak3r.enablemeahora
+Name: EnableMeAhora
+Depends: mobilesubstrate, preferenceloader, com.creaturesurvive.libcscolorpicker
+Version: 0.1.0
+Architecture: iphoneos-arm
+Description: An awesome tweak to custom color your on and off switches (in Settings, Flex and a few apps only for now, system wide shortly). Includes color pickers for all main elements of a switch, its background and border. WIP
+Maintainer: i0s_tweak3r
+Author: i0s_tweak3r
+Section: Tweaks
