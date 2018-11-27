@@ -7,10 +7,7 @@
 #import <Foundation/Foundation.h>
 
 
-/**
-@interface UISwitchVisualElement : UIView
-@property(nonatomic, copy)UIColor *backgroundColor;
-**/
+
 #include <CSColorPicker/CSColorPicker.h>
 
 
@@ -36,30 +33,6 @@ static bool kUseWellColor = YES;
 static double kCustomBorderWidth = 3.f;
 static bool kWantsCustomWidth = YES;
 
-
-/**
-@interface UISwitch : UIView
-{
-UIColor *_onTintColor;
-UIColor *_thumbTintColor;
-UISwitchVisualElement *_visualElement;
-}
-@property(nonatomic, copy) UIColor *thumbTintColor;
-@property(nonatomic, copy) UIColor *backgroundColor;
-@property (nonatomic, strong) UISwitchVisualElement *visualElement;
-@end
-***/
-/**
-@interface UISwitchVisualElement : UIView
-@property(nonatomic, copy, readwrite)UIColor *thumbTintColor;
-@property(nonatomic, copy, readwrite)UIColor *backgroundColor;
-@end
-
-@interface UISwitchModernVisualElement : UIView
-@property(nonatomic, copy)UIColor *thumbTintColor;
-@property(nonatomic, copy)UIColor *backgroundColor;
-@end
-**/
 
 %hook UISwitchVisualElement
 -(void)setOnTintColor:(UIColor *)onTintColor {
