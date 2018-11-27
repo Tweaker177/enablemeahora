@@ -204,7 +204,7 @@ return kCustomBorderWidth;
     return %orig;
 }
 %end
-/*** Left this method to remind possibility to hook and add custom thumb images
+/*** Left this method to remind possibility to hook and add custom thumb images tho booking the iVar for knobImage would probably be bettter
 %hook UISwitchModernVisualElement
 - (id)_effectiveThumbImage {
     return %orig;
