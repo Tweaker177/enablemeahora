@@ -9,4 +9,6 @@ Project can be downloaded and used in .deb format by adding my repo: http://i0s-
 While at the time of writing this, the version in repo is from this exact code, the most recent version will always be in the repo.
 I plan on trying to keep the GitHub pages current tho with the code used for version in repo, but at times it may be behind.
 
-All files copyright 2018 Brian Nooning aka i0s_tweak3r.
+All files copyright 2018 Brian Nooning aka i0s_tweak3r except for library used made by Creature Survive.
+To compile this tweak resources need added to theos directories available here: 
+https://github.com/CreatureSurvive/libCSColorPicker
